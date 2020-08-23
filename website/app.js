@@ -1,7 +1,5 @@
 /* Global Variables */
 const generateBtn = document.getElementById("generate");
-const zip = document.getElementById("zip").value;
-const feelings = document.getElementById("feelings").value;
 
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -18,6 +16,8 @@ generateBtn.addEventListener("click", performAction);
 
 function performAction(e) {
 	e.preventDefault();
+	let zip = document.getElementById("zip").value;
+	let feelings = document.getElementById("feelings").value;
 	getWeather(baseURL, zip, apiKey)
 		.then(function (userData) {
 			// add data to POST request
